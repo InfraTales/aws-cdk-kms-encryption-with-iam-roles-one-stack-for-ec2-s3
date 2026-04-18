@@ -1,0 +1,11 @@
+graph TD
+    subgraph AWS["AWS Cloud"]
+        S3[(S3)]
+        KMS[KMS]
+        IAM[IAM]
+    end
+
+    RDS --> S3
+    S3 --> KMS
+    KMS --> IAM
+    KMS -.->|metrics| CW[CloudWatch]
