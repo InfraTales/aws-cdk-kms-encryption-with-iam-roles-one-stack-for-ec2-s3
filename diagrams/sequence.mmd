@@ -1,0 +1,9 @@
+sequenceDiagram
+    User->>RDS: Request
+    RDS->>S3: Request
+    S3->>KMS: Request
+    KMS->>IAM: Request
+    IAM-->>KMS: Response
+    KMS-->>S3: Response
+    S3-->>RDS: Response
+    RDS-->>User: Response
